@@ -1,4 +1,4 @@
-# My CV (in development)
+# My CV (in development, /data still needs to be cleaned)
 
 Credits: [Daniel Anderson](https://github.com/datalorax/anderson-cv).
 
