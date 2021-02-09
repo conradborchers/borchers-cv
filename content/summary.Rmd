@@ -1,7 +1,0 @@
-```{block type="col-1 grid-item", echo=TRUE}
-## About Me {.box}
-I am interested in the intersection of data science and educational research. 
-My research interests include social network analysis, natural language
-processing and self-regulated learning. I enjoy using personal
-knowledge management tools and solving programming problem sets on Codeforces.
-```

@@ -11,268 +11,110 @@ knit: pagedown::chrome_print
 ---
 
 ```{r setup, include=FALSE}
-library(tidyverse)
-library(lubridate)
-library(knitr)
-opts_chunk$set(echo = FALSE)
-options(knitr.kable.NA = '')
-
-#### cv entries #####
-cv_entries <- readxl::read_xlsx(here::here("data", "cv_entries.xlsx"))
-
-#### publications #####
-pubs <- readxl::read_xlsx(here::here("data", "pubs.xlsx")) %>% 
-  arrange(order) %>% 
-  select(-order)
-
-pubs <- map_df(pubs, ~gsub("\\.$", "", .x))
+library(dplyr)
 ```
 
 
-```{r}
-header <- '
+```{r download-button, echo=FALSE, results='asis'}
+
+include_dl_button <- TRUE
+
+if (include_dl_button) {
+  cat(
+    "
+<div class = \"download\">
   Download PDF
-  <a href="https://github.com/conradborchers/borchers-cv/raw/master/borchers-cv.pdf" class="icon-block">
-  <i class="fas fafooter fa-download"></i>
+  <a href=\"https://github.com/conradborchers/borchers-cv/raw/master/borchers-cv.pdf\" class=\"icon-block\">
+  <i class=\"fas fafooter fa-download\"></i>
   </a>
-  '
-```
-
-
-<div class = "download">
-```{r results = "asis"}
-cat(header)
-```
-
 </div>
+    "
+  )
+}
 
-<div class = "footer",>
-  <a href="https://github.com/conradborchers/" class="icon-block">
-      <i class="fab fafooter fa-github"> | </i>
-  </a>
-  
-  <a href="mailto:conrad.borchers@student.uni-tuebingen.de" class="icon-block">
-      <i class="fas fafooter fa-envelope"> | </i>
-  </a>
-  
-  <a href="https://www.cborchers.com" class="icon-block">
-      <i class="fas fafooter fa-globe"> | </i>
-  </a>
-  
-  <a href="https://twitter.com/conradborchers" class="icon-block">
-      <i class="fab fafooter fa-twitter"> | </i>
-  </a>
-  
-  <a href="https://orcid.org/0000-0003-3437-8979" class="icon-block">
-      <i class="fab fafooter fa-orcid"></i>
-  </a>
-  
-</div>
-
+```
 
 <div id = "block_container">
-
 <div class = "first", id="bloc1">Conrad</div>  
 <div class = "last", id="bloc2">Borchers</div>
-
 </div>
 
-<div id = "position", class = "position">
-Undergraduate Student of Psychology and Research Assistant
-</div>
+<p align="center">
+<span style="color: #454545"><i class="fas fa-globe"></i></span> 
+[cborchers.com](https://www.cborchers.com)
+<span style="color: #454545; margin-left: 0.5em"><i class="fab fa-github"></i></span> [conradborchers](https://github.com/conradborchers/)
+<span style="color: #454545; margin-left: 0.5em"><i class="fas fa-envelope"></i></span> 
+conrad.borchers\@student.uni-tuebingen.de 
+</p>
+
+## Education
+
+<p>
+2018 --- 2021 <strong>Psychology B.Sc.</strong>, University of Tübingen, GPA: <strong>3.64</strong>/4.00
+<br>
+<p style="margin-left:40px">
+<strong>Relevant Coursework:</strong> Inferential statistics, categorical data analysis,
+experimental design and causal inference, psychometrics, multivariate statistics,
+media and educational psychology, memory and learning
+</p>
+
+## Selected Work Experience
+
+<strong>Hector Research Institute of Education Sciences</strong><br>
+<em>Research Assistant and Intern, Lab of Prof. Christian Fischer (Feb 2020 to present)</em><br>
+<ul>
+<li>Wrote downloading pipelines in shell script for the APIs of Twitter and CrowdTangle
+</li><li>Applied and validated classification algorithms in Python on Twitter profiles
+</li><li>Built data pipelines in R-targets to optimize computation and storage of Twitter datasets
+</li><li>Built SQLite databases combining Facebook data and public data of schools
+</ul>
+
+<strong>Leibniz Knowledge Media Center (IWM) and Tübingen School of Education</strong><br>
+<em>Research Assistant, TabletBW Project on Tablet Use in K-12 Education (Feb 2019 to Jan 2021)</em><br>
+<ul>
+<li>Led final aggregation of students' and teachers' data across cohorts (SPSS, R)
+</li><li>Improved participant ID matching and recovery through Python scripts 
+</li><li>Supervised and maintained online teacher surveys in Unipark
+</ul>
+
+## Fellowships and Honours
 
 
-<div id = "sub", class = "sub">
-Curriculum Vitae
-</div>
+<strong>German National Merit Scholar (Studienstiftung)</strong><span style="float:right;">Awarded November 2018</span>
+<br>
+<strong>EFPSA Research Programme Scholar</strong><span style="float:right;">2019/2020 Cohort</span>
+<br>
+<strong>Schmidt Futures Scholar (Learning Engineering, EPIC@Berkeley)</strong><span style="float:right;">Initial Cohort 2021</span>
 
+## Selected Publications
 
-<div class="grid-container">
+<style>
+.hangingindent {
+  padding-left: 28px ;
+  text-indent: -28px ;
+} 
+</style>
 
-```{r summary, child = here::here("content", "summary.Rmd")}
+<p class="hangingindent">
+ <strong>Borchers, C.</strong>, Eder, T. F., Scheiter, K. (preregistration). How Effective is Reflective Search? A Time Slice Analysis of Dentistry Students’ Visual Search Strategies and Pupil Dilation during the Diagnosis of Radiographs. PsychArchives. 
+[[pdf]](https://hdl.handle.net/20.500.12034/4035)
+</p>
+
+<p class="hangingindent">
+Rosenberg, J., <strong>Borchers, C.</strong>, Dyer, E., Anderson, D. & Fischer, C. (preprint). Advancing new methods for understanding public sentiment about 
+educational reforms: The case of Twitter and the Next Generation Science Standards. OSF.
+[[pdf]](https://osf.io/xymsd)
+</p>
+
+## Skills
+
+<strong>Skills:</strong> 
+R (tidyverse, markdown, shiny, targets), Python (pandas, sklearn, numpy, matplotlib), Bash, HTML, JavaScript, CSS, LaTeX, SPSS, SQL, C++
+
+<br>
+
+<p><small>
+```{r results = "asis", echo = FALSE}
+cat("Updated", Sys.Date() %>% as.character())
 ```
-
-```{r contact-info, child = here::here("content", "contact-info.Rmd")}
-```
-
-</div>
-
-## Education {.education .nohead}
-```{r}
-cv_entries %>% 
-  filter(type == 'education') %>% 
-  mutate(what = paste0(what, ", ", where),
-         what = gsub("NA", "", what),
-         what = gsub(", $", "", what),
-         ) %>% 
-  mutate(year = str_c(year_begin, " --- ", year_end)) %>% 
-  select(year, what) %>% 
-  kable()
-```
-
-## Brief professional history  {.history .nohead}
-
-```{r}
-cv_entries %>% 
-  filter(type == 'history') %>% 
-  mutate(what = paste0("<span style= 'font-weight: 500'>",
-                       what, 
-                       "</span>"),
-    what = paste0(what, ", ", where),
-         what = gsub("NA", "", what),
-         what = gsub(", $", "", what)) %>% 
-  mutate(year = str_c(year_begin, 
-                      " --- ", 
-                      ifelse(is.na(year_end), "", year_end))) %>% 
-  select(year, what) %>% 
-  kable()
-```
-
-## Additional training (received) {.nohead .extratrain}
-
-<div class = "hangingindent">
-```{r}
-cv_entries %>% 
-  filter(type == "extra-training") %>% 
-  mutate(training = paste0(what, " (", year_end, "). ", where, "\\n")) %>% 
-  select(training) %>% 
-  kable()
-```
-<div/>
-
-# Scholarship
-
-<div class = "inote">
-Icons link to additional content  
-</div>
-
-## Manuscripts under review for publication {.submitted .nohead}
-
-<div class = "hangingindent">
-
-```{r }
-
-make_cite <- function(authors,	year,	title,	journal = NULL,	volume = NULL,	
-                      issue = NULL,	pages = NULL,	doi = NULL,	url = NULL,
-                      book = NULL, place_published = NULL, conference = NULL,
-                      poster = NULL, conf_loc = NULL, annual_meeting = NULL,
-                      version = NULL,...) {
-  
-  if(!is.null(journal)) {
-    journal <- paste0("*", journal, "*.")
-  }
-  
-  if(!is.null(volume)) {
-    volume <- paste0("*", volume, "*,")
-  }
-  
-  if(!is.null(issue)) {
-    volume <- paste0(gsub(",", "", volume), "(", issue, "),")
-  }
-  if(!is.null(doi) & !is.null(url)) {
-    doi <- paste0("[doi: ", doi, "](", url, ")")
-  }
-  if(!is.null(pages)) {
-    if(!is.null(book)) {
-      pages <- paste0("(pp. ", pages, ").")
-    }
-    else {
-     pages <- paste0(pages,".") 
-    }
-  }
-  if(!is.null(book)) {
-    book <- paste0("*", book, "*")
-  }
-  if(!is.null(conference)) {
-    title <- paste0("*", title, "*")
-    if(is.null(poster)) {
-      if(annual_meeting) {
-        conference <- paste0("Presentation at the annual ", conference, ".")
-      }
-      else {
-        conference <- paste0("Presentation at the ", conference, ".")
-      }
-    }
-    else if(poster) {
-      if(annual_meeting) {
-       conference <- paste0("Poster presented at the annual meeting of the ", 
-                            conference,
-                            ", ", 
-                            conf_loc,
-                            ".") 
-      }
-      else {
-        conference <- paste0("Poster presented at the ", 
-                             conference, 
-                             ", ", 
-                             conf_loc, 
-                             ".") 
-      }
-    }
-    else {
-       if(annual_meeting) {
-          conference <- paste0("Paper presented at the annual meeting of the ", 
-                            conference, 
-                            ", ", 
-                            conf_loc,
-                            ".") 
-      }
-      else {
-        conference <- paste0("Paper presented at the ", 
-                             conference, 
-                             ",", 
-                             conf_loc,
-                            ".") 
-      }
-    }
-  }
-  if(!is.null(version)) {
-    version <- paste0("R package version ", version, ".")
-  }
-  authors <- gsub(
-    "Borchers, C\\.?",
-    "<span style= 'font-weight: 500'>Borchers, C.</span>", 
-    authors)
-   
-  paste(authors, 
-        paste0("(", year, ")."), 
-        paste0(title, "."),
-        version, 
-        conference,
-        journal, 
-        volume,
-        book,
-        pages, 
-        doi,
-        place_published)
-}
-
-
-submitted <- pubs %>% 
-  filter(type == "in-review") %>% 
-  select(-type)
-
-fa_git <- ifelse(
-  !is.na(submitted$git_repo), 
-  paste0('[<i class="fab falink2 fa-github"></i>](', 
-         submitted$git_repo, 
-         ")"
-         ),
-  ""
-  )
-
-each_cite <- split(submitted, seq_len(nrow(submitted)))
-empties <- map(each_cite, ~map_lgl(.x, is.na))
-
-cites <- map2(each_cite, empties, ~.x[ ,!.y])
-formatted_cites <- map(cites, ~do.call(make_cite, .x)) 
-
-if(length(formatted_cites) > 0) {
- submitted_tbl <- tibble(count = paste0(seq(length(formatted_cites), 1), "."),
-                         cites = paste(unlist(formatted_cites), fa_git)) 
-  
-  kable(submitted_tbl) 
-}
-```
-
-</div>
+</small></p>
