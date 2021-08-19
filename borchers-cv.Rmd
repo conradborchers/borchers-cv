@@ -17,7 +17,7 @@ library(dplyr)
 
 ```{r download-button, echo=FALSE, results='asis'}
 
-include_dl_button <- TRUE
+include_dl_button <- F
 
 if (include_dl_button) {
   cat(
@@ -44,13 +44,14 @@ if (include_dl_button) {
 [cborchers.com](https://www.cborchers.com)
 <span style="color: #454545; margin-left: 0.5em"><i class="fab fa-github"></i></span> [conradborchers](https://github.com/conradborchers/)
 <span style="color: #454545; margin-left: 0.5em"><i class="fas fa-envelope"></i></span> 
-conrad.borchers\@student.uni-tuebingen.de 
+conrad.borchers\@oii.ox.ac.uk
 </p>
 
 ## Education
 
 <p>
-2018 --- 2021 <strong>Psychology B.Sc.</strong>, University of Tübingen, GPA: <strong>3.64</strong>/4.00
+2021 --- 2022 <strong>Social Data Science M.Sc.</strong> - University of Oxford<br>
+2018 --- 2021 <strong>Psychology B.Sc.</strong> - University of Tübingen, GPA: <strong>3.66</strong>/4.00
 <br>
 <p style="margin-left:40px">
 <strong>Relevant Coursework:</strong> Inferential statistics, categorical data analysis,
@@ -60,29 +61,29 @@ media and educational psychology, memory and learning
 
 ## Selected Work Experience
 
-<strong>Hector Research Institute of Education Sciences</strong><br>
-<em>Research Assistant and Intern, Lab of Prof. Christian Fischer (Feb 2020 to present)</em><br>
+<strong>University of California, Berkeley - Graduate School of Education</strong><br>
+<em>Research Intern, CAHL Lab of Prof. Zachary Pardos (May 2021 to present)</em><br>
+<ul>
+<li>Co-authored a research article integrating psychological constructs, survey research, and machine learning research
+</li><li>Led feature engineering of learning management system and enrollment data in Python
+</li><li>Conducted mixed modeling of students’ time load and psychological stress in Python
+</li>
+</ul>
+
+<strong>University of Tübingen - Hector Research Institute of Education Sciences</strong><br>
+<em>Research Intern and Affiliate, Lab of Prof. Christian Fischer (Feb 2020 to present)</em><br>
 <ul>
 <li>Wrote downloading pipelines in shell script for the APIs of Twitter and CrowdTangle
 </li><li>Applied and validated classification algorithms in Python on Twitter profiles
-</li><li>Built data pipelines in R-targets to optimize computation and storage of Twitter datasets
-</li><li>Built SQLite databases combining Facebook data and public data of schools
-</ul>
-
-<strong>Leibniz Knowledge Media Center (IWM) and Tübingen School of Education</strong><br>
-<em>Research Assistant, TabletBW Project on Tablet Use in K-12 Education (Feb 2019 to Jan 2021)</em><br>
-<ul>
-<li>Led final aggregation of students' and teachers' data across cohorts (SPSS, R)
-</li><li>Improved participant ID matching and recovery through Python scripts 
-</li><li>Supervised and maintained online teacher surveys in Unipark
+</li><li>Built data pipelines in R-targets to optimize the analysis of Twitter data sets
+</li><li>Built SQLite databases combining Facebook data and public NCES school data
 </ul>
 
 ## Fellowships and Honours
 
-
 <strong>German National Merit Scholar (Studienstiftung)</strong><span style="float:right;">Awarded November 2018</span>
 <br>
-<strong>EFPSA Research Programme Scholar</strong><span style="float:right;">2019/2020 Cohort</span>
+<strong>EFPSA Research Program Scholar</strong><span style="float:right;">2019/2020 Cohort</span>
 <br>
 <strong>Schmidt Futures Scholar (Learning Engineering, EPIC@Berkeley)</strong><span style="float:right;">Initial Cohort 2021</span>
 
@@ -96,21 +97,18 @@ media and educational psychology, memory and learning
 </style>
 
 <p class="hangingindent">
- <strong>Borchers, C.</strong>, Eder, T. F., Scheiter, K. (preregistration). How Effective is Reflective Search? A Time Slice Analysis of Dentistry Students’ Visual Search Strategies and Pupil Dilation during the Diagnosis of Radiographs. PsychArchives. 
-[[pdf]](https://hdl.handle.net/20.500.12034/4035)
+Burchfield, M., Rosenberg, J., <strong>Borchers, C.</strong>, Thomas, T., Gibbons, B., & Fischer, C. (2021). Investigating the Privacy of Students’ Images and Names in the Context of K-12 Educational Institution’s Posts on Facebook. Proceedings of the 14th International Conference on Educational Data Mining (EDM). Paris, France. <strong>Best Poster Award.</strong> [[pdf](https://educationaldatamining.org/EDM2021/virtual/static/pdf/EDM21_paper_276.pdf)]
 </p>
 
 <p class="hangingindent">
-Rosenberg, J., <strong>Borchers, C.</strong>, Dyer, E., Anderson, D. & Fischer, C. (preprint). Advancing new methods for understanding public sentiment about 
-educational reforms: The case of Twitter and the Next Generation Science Standards. OSF.
-[[pdf]](https://osf.io/xymsd)
+Rosenberg, J., <strong>Borchers, C.</strong>, Dyer, E., Anderson, D. & Fischer, C. (2021). Understanding Public Sentiment About Educational 
+	Reforms: The Next Generation Science Standards on Twitter. AERA Open, 7(1), 1-17. [[pdf]](https://journals.sagepub.com/doi/pdf/10.1177/23328584211024261)
 </p>
 
 ## Skills
 
 <strong>Skills:</strong> 
-R (tidyverse, markdown, shiny, targets), Python (pandas, sklearn, numpy, matplotlib), Bash, HTML, JavaScript, CSS, LaTeX, SPSS, SQL, C++
-
+R (tidyverse, tidymodels, targets), Python (pandas, sklearn, NLTK), Bash, SPSS, SQL
 <br>
 
 <p><small>
