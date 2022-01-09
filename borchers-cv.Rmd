@@ -62,7 +62,7 @@ media and educational psychology, memory and learning
 ## Selected Work Experience
 
 <strong>University of California, Berkeley - Graduate School of Education</strong><br>
-<em>Research Intern, CAHL Lab of Prof. Zachary Pardos (May 2021 to present)</em><br>
+<em>Research Intern, CAHL Lab of Prof. Zachary Pardos (May 2021 to September 2021)</em><br>
 <ul>
 <li>Co-authored a research article integrating psychological constructs, survey research, and machine learning research
 </li><li>Led feature engineering of learning management system and enrollment data in Python
