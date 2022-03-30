@@ -1,7 +1,3 @@
-.DS_Store
-.Rapp.history
+todo.txt
 .Rproj.user/*
-data/~*
-.Rproj.user
-.Rhistory
-hidden*
+*.swp
